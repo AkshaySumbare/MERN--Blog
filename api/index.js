@@ -1,5 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import userRoutes from './routes/user.route.js';
 
 
 
@@ -15,4 +16,6 @@ app.listen(3000, ()=>{
     console.log("Server is runing!");
 });
 
+app.use('/api/user',userRoutes);
+   
 
