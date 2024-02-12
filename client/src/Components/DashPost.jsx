@@ -93,7 +93,7 @@ export default function DashPost() {
                     </Table.Cell>
                     <Table.Cell>
                       <Link  to={`/post/${post.slug}`} >
-                        <img src={post.Image} alt={post.title} className='w-20 h-10 object-cover bg-gray-500' />
+                        <img src={post.image} alt={post.title} className='w-20 h-10 object-cover bg-gray-500' />
                       </Link>
                     </Table.Cell>
                     <Table.Cell>
@@ -109,7 +109,7 @@ export default function DashPost() {
                       }} className='font-medium text-red-500 hover:underline cursor-pointer'>Delete</span>
                     </TableCell>
                     <TableCell>
-                      <Link className='text-teal-500 hover:underline ' to={`update-post/${post._id}`}>
+                      <Link className='text-teal-500 hover:underline ' to={`/update-post/${post._id}`}>
                       <span>Edit</span>
                       </Link>
                       
