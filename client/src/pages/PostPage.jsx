@@ -65,7 +65,7 @@ export default function PostPage() {
       <div className="flex justify-center items-center min-h-screen">
         <Spinner size = 'xl' />
       </div>
-    )
+    );
     
   return (
  <main className='p-3 flex flex-col max-w-6xl  mx-auto min-h-screen'>
@@ -80,11 +80,11 @@ export default function PostPage() {
     <span>{post && new Date(post.createdAt).toLocaleDateString()}</span>
     <span className='italic'>{post && (post.content.length/ 1000).toFixed(0)} mins read</span>
     </div>
-    <div className='p-3 max-w-2xl mx-auto w-full post-content' dangerouslySetInnerHTML={{__html: post && post.content}}>
+    <div className='p-3 max-w-2xl mx-auto w-full post-content' dangerouslySetInnerHTML={{__html:post && post.content}}>
     </div>
     <div className="max-w-4xl mx-auto w-full ">
-      <CallToAction>
-      </CallToAction>
+      <CallToAction/>
+     
     </div>
     <CommentSection postId={post._id}/>
 
