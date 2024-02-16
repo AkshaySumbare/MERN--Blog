@@ -5,11 +5,11 @@ import OAuth from "../Components/OAuth";
 
 export default function SignUp() {
   const [formData, setFormData] = useState({});
-  const [errorMessage, setErrorMessage] = useState([null]);
+  const [errorMessage, setErrorMessage] = useState(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleChange = (e) => {
+  const handleChange =  (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
   };
 
@@ -21,7 +21,7 @@ export default function SignUp() {
     try {
       setLoading(true);
       setErrorMessage(null);
-      const res = await fetch("/api/auth/signup", {
+      const res = await fetch('/api/auth/signup', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -68,7 +68,7 @@ export default function SignUp() {
                 id="username"
                 onChange={handleChange}
               />
-            </div>{" "}
+            </div>
             <div>
               <Label value="Your email" />
               <TextInput
@@ -77,7 +77,7 @@ export default function SignUp() {
                 id="email"
                 onChange={handleChange}
               />
-            </div>{" "}
+            </div>
             <div>
               <Label value="Your password" />
               <TextInput
@@ -106,7 +106,7 @@ export default function SignUp() {
           <div className="flex gap-2 text-sm mt-5">
             <span>Have an account?</span>
             <Link to="/sign-in" className="text-blue-500">
-              Sign-in
+              Sign-In
             </Link>
           </div>
           {errorMessage && (

@@ -39,7 +39,9 @@ export default function UpdatePost() {
             setFormData(data.posts[0]);
         }
       };
+
       fetchPost();
+       
     } catch (error) {
       console.log(error.message);
     }
@@ -78,6 +80,7 @@ export default function UpdatePost() {
     } catch (error) {
       setImageUploadError("Image upload failed");
       setImageUploadProgress(null);
+      console.log(error);
     }
   };
 
@@ -85,9 +88,9 @@ export default function UpdatePost() {
     e.preventDefault();
     try {
       const res = await fetch(`/api/post/updatepost/${formData._id}/${currentUser._id}`, {
-        method: "PUT",
+        method: 'PUT',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       });
@@ -122,7 +125,7 @@ export default function UpdatePost() {
               setFormData({ ...formData, title: e.target.value })
             }
             value={formData.title}
-          ></TextInput>
+          />
           <Select
             onChange={(e) =>
               setFormData({ ...formData, category: e.target.value })
@@ -130,6 +133,7 @@ export default function UpdatePost() {
             value={formData.category}
           >
             <option value="uncategorized">Select a category</option>
+            <option value="Other">Other</option>
             <option value="reactjs">React.js</option>
             <option value="javascript">JavaScript</option>
             <option value="C++">C++</option>
