@@ -192,7 +192,7 @@ export default function DashboardComp() {
                 <Table.Cell>
                     <img src={post.image} alt="user" className="w-14 h-10 rounded-md  bg-gray-500 " />
                 </Table.Cell>
-                <TableCell className="w-96">{post.title}</TableCell>
+                <TableCell className="w-36">{post.title}</TableCell>
                 <TableCell className="w-5">{post.category}</TableCell>
                 </Table.Row>
              </TableBody>

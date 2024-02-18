@@ -26,11 +26,12 @@ export default function SignUp() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
+      setLoading(false);
       const data = await res.json();
       if (data.success === false) {
         return setErrorMessage(data.message);
       }
-      setLoading(false);
+ 
       if (res.ok) {
         navigate("/sign-in");
       }
